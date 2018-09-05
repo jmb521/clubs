@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-md-8 col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Children
+        </div>
+        <div class="panel-body">
+          <% @children.each do |child| %>
+            <label>Child Name: </label><%= child.name %>
+            <label>Birthday: </label><%= child.birthday.strftime("%m/%d/%y") %>
+            <%= link_to "Edit", edit_user_child_path(child.user.id, child.id) %>
+            <%= link_to "Delete", user_child_path(child.user.id, child.id), :method => :delete %>
+            <br />
+            <br />
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
