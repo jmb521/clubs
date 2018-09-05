@@ -5,23 +5,25 @@ class ChildrenController < ApplicationController
     # @children = Child.where(:user_id => params[:user_id])
   end
 
-  def show
-    @children = User.find_by(:id => params[:user_id])
-  end
-  def update
-    @children = Child.find(params[:id])
-    @children.update(children_params)
-    @children.save
-    redirect_to user_children_path(:user_id => @children.user_id)
-  end
+  # def show
+  #   @children = User.find_by(:id => params[:user_id])
+  # end
 
   def edit
     @user = User.find_by(:id => params[:user_id])
     @child = @user.children.find_by(:id => params[:id])
-    if !@child
-      redirect_to new_user_child_path
-    end
+    # if !@child
+    #   redirect_to new_user_child_path
+    # end
+  end
 
+  def update
+    
+    @children = Child.find(params[:id])
+    @children.update(children_params)
+    @children.save
+
+    redirect_to user_children_path(@children.user_id)
   end
 
   def new
@@ -30,11 +32,9 @@ class ChildrenController < ApplicationController
   end
   def create
     @child = current_user.children.create(children_params)
-    if @child.save
-      redirect_to user_children_path(@child.user_id)
-    else
-      binding.pry
-    end
+    binding.pry
+    redirect_to user_children_path(@child.user_id)
+
   end
 
   def destroy

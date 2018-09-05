@@ -6,14 +6,24 @@
           Children
         </div>
         <div class="panel-body">
-          <% @children.each do |child| %>
-            <label>Child Name: </label><%= child.name %>
-            <label>Birthday: </label><%= child.birthday.strftime("%m/%d/%y") %>
-            <%= link_to "Edit", edit_user_child_path(child.user.id, child.id) %>
-            <%= link_to "Delete", user_child_path(child.user.id, child.id), :method => :delete %>
-            <br />
-            <br />
-          <% end %>
+            <table class="table">
+              <tr>
+                <th>Child Name</th>
+                <th>Birthday</th>
+                <th>Edit/Delete</th>
+              </tr>
+              <tbody>
+                <% @children.each do |child| %>
+                <tr>
+                  <td><%= child.name %></td>
+                  <td><%= child.birthday.strftime("%m/%d/%y") %></td>
+                  <td><%= link_to "Edit", edit_user_child_path(child.user.id, child.id) %>
+                    <%= link_to "Delete", user_child_path(child.user.id, child.id), :method => :delete %>
+                  </td>
+                </tr>
+                <% end %>
+              </tbody>
+        </table>
         </div>
       </div>
     </div>
