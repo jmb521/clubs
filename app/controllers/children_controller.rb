@@ -18,10 +18,10 @@ class ChildrenController < ApplicationController
   end
 
   def update
-    
+
     @children = Child.find(params[:id])
     @children.update(children_params)
-    @children.save
+    
 
     redirect_to user_children_path(@children.user_id)
   end
