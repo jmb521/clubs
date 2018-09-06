@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <h1>All Members</h1>
+  </div>
+  <div class="row">
+    <table class="table">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Address2</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Role</th>
+        <th>Update Membership</th>
+      </tr>
+      <tbody>
+        <% @user.each do |member| %>
+        <tr>
+          <td><%= member.profile.first_name %></td>
+          <td><%= member.profile.last_name %></td>
+          <td><%= member.email %></td>
+          <td><%= member.profile.address1 %></td>
+          <td><%= member.profile.address2 %></td>
+          <td><%= member.profile.city %></td>
+          <td><%= member.profile.phone %></td>
+          <td><%= member.role %></td>
+          <td><%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %></td>
+        </tr>
+        <% end %>
+      </tbody>
+      <br />
+    </table>
+  </div>
+</div>
