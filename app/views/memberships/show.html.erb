@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-md-8 col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Membership
+        </div>
+        <div class="panel-body">
+          <label>Is Member</label><%= @membership.is_member %>
+          <br />
+          <br />
+          <label>Membership Paid</label><%= @membership.membership_paid %>
+          <br />
+          <br />
+          <label>Last Updated: </label><%= @membership.updated_at.strftime("%m/%d/%y") %>
