@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-md-8 col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Profile&nbsp;&nbsp;&nbsp;Last updated: <%= @profile.updated_at.strftime("%m %d %y") %>
+        </div>
+
+        <div class="panel-body">
+          <label>First Name: </label><%= @profile.first_name %>
+          <br />
+          <br />
+          <label>Last Name: </label><%= @profile.last_name %>
+          <br />
+          <br />
+          <label>Address: </label><%= @profile.address1 %>
+          <br />
+          <br />
+          <% if @profile.address2 %>
+          <label>Address2: </label><%= @profile.address2 %>
+          <br />
+          <br />
+          <% end %>
+          <label>City: </label><%= @profile.city %>
+          <br />
+          <br />
+          <label>State: </label><%= @profile.state %>
+          <br />
+          <br />
+          <label>Zipcode: </label><%= @profile.zipcode %>
+          <br />
+          <br />
+          <label>Phone: </label><%= @profile.phone %>
+          <br />
+          <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-default" %>
+          <%= link_to "Edit Family", edit_user_family_path(@profile.user_id), class: "btn btn-default" %>
+          <% if current_user.children.length >0  %>
+            <%= link_to "Edit Children", user_children_path(@profile.user_id), class: "btn btn-default" %>
+          <% else %>
+            <%= link_to "Add Child", new_user_child_path(@profile.user_id), class: "btn btn-default" %>
+          <% end %>
+          <%= link_to "View Membership Status", membership_path(@profile.user_id), class: "btn btn-default" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
