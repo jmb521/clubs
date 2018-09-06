@@ -22,7 +22,11 @@
             <li><%= link_to "Sign In", new_user_session_path %></li>
           <% end %>
         </ul>
-
+        <ul class="nav navbar-nav navbar-left">
+          <% if user_signed_in? %>
+            <li><%= link_to "Profile", profile_path(current_user.id, current_user.id) %></li>
+          <% end %>
+        </ul>
       </div>
     </nav>
     <%= yield %>
