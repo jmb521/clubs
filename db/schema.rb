@@ -15,24 +15,24 @@ ActiveRecord::Schema.define(version: 2018_08_27_040446) do
   create_table "children", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.string "birthday"
+    t.datetime "birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "families", force: :cascade do |t|
     t.integer "user_id"
-    t.string "user_birthday"
+    t.datetime "user_birthday"
     t.string "spouse"
-    t.string "spouse_birthday"
+    t.datetime "spouse_birthday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "memberships", force: :cascade do |t|
-    t.string "is_member"
+    t.boolean "is_member", default: false
     t.integer "user_id"
-    t.string "membership_paid"
+    t.boolean "membership_paid", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

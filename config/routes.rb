@@ -1,18 +1,27 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
 
-resources :users do
-  resources :children, only: [:index, :edit, :new, :create, :destroy]
+  }
+
+
+resources :users, except: [:index, :show, :create, :edit, :update, :new, :destroy] do
+  resources :children
   resources :families
 
 end
   resources :profiles
-  resources :memberships
+  resources :memberships, only: [:show]
 
+  namespace :admin do
+    resources :users
+    resources :membership
+    get '/pending' => "membership#pending"
+    get '/make_user' => "membership#make_user"
+    get '/dashboard' => "application#dashboard"
+    get '/make_admin' => "membership#make_admin"
+  end
 
-  devise_for :users, controllers: {
-      sessions: 'users/sessions'
-
-    }
   # resources :users do
   #   get "/" => "users#home"
   # end
