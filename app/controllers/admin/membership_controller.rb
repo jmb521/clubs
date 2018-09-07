@@ -1,11 +1,12 @@
 class Admin::MembershipController < ApplicationController
-  before_action :user_signed_in?
+  before_action :authenticate_user!
   before_action :is_admin
   def index
     @user = User.all
   end
 
   def pending
+    binding.pry
     @users = User.where(:role => "applicant")
   end
 
