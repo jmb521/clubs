@@ -1,5 +1,5 @@
 class ChildrenController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @children = User.find_by(:id => params[:user_id]).children
     # @children = Child.where(:user_id => params[:user_id])
@@ -21,7 +21,7 @@ class ChildrenController < ApplicationController
 
     @children = Child.find(params[:id])
     @children.update(children_params)
-    
+
 
     redirect_to user_children_path(@children.user_id)
   end

@@ -1,5 +1,5 @@
 class FamiliesController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @family = User.find_by(:id => params[:user_id].family)
   end
