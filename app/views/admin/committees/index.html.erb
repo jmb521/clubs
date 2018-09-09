@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <%= render "form" %>
+  </div>
+  <div class="row">
+      <% @committees.each do |committee| %>
+      <p><%= committee.name %>
+      <%= link_to "Edit", edit_admin_committee_path(committee.id) %>
+      </p>
+      <% end %>
+  </div>
+</div>

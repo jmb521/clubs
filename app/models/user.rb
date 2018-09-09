@@ -8,7 +8,8 @@ class User < ApplicationRecord
         has_many :children
         has_one :family, :autosave => true
         has_one :membership, :autosave => true
-
+        has_many :user_committees
+        has_many :committees, :through => :user_committees
 
         after_create :create_family
         after_create :create_membership
