@@ -25,6 +25,7 @@ class Admin::CommitteesController < ApplicationController
 
   def create
     @committee = Committee.create(committee_params)
+    redirect_to admin_committees_path
   end
 
   private
