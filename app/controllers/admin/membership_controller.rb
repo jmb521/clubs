@@ -6,8 +6,12 @@ class Admin::MembershipController < ApplicationController
   end
 
   def pending
-    binding.pry
+
     @users = User.where(:role => "applicant")
+  end
+
+  def former
+    @users = User.where(:role => "former")
   end
 
   def make_user
