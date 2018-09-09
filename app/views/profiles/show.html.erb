@@ -40,6 +40,7 @@
             <%= link_to "Add Child", new_user_child_path(@profile.user_id), class: "btn btn-default" %>
           <% end %>
           <%= link_to "View Membership Status", membership_path(@profile.user_id), class: "btn btn-default" %>
+          <%= link_to "Committees", user_committee_path(@profile.user_id), class: "btn btn-default" %>
         </div>
       </div>
     </div>

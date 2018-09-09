@@ -14,7 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    users_path
+    if current_user.profile.first_name != nil
+      users_path
+    else
+      profile_path(current_user.profile.id)
+    end
   end
 
   def is_admin
@@ -24,5 +28,5 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  
+
 end
