@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 resources :users, except: [:index, :show, :create, :edit, :update, :new, :destroy] do
   resources :children
   resources :families
+  resources :committees
 
 end
-  resources :committees
+  # resources :committees
   resources :profiles
   resources :memberships, only: [:show]
 
