@@ -10,7 +10,7 @@ resources :users, except: [:index, :show, :create, :edit, :update, :new, :destro
   resources :children
   resources :families
   resources :committees
-
+  get 'add_committee' => "committees#add_user_to_committee"
 end
   # resources :committees
   resources :profiles
@@ -25,6 +25,7 @@ end
     get '/dashboard' => "application#dashboard"
     get '/make_admin' => "membership#make_admin"
     get '/former' => "membership#former"
+
   end
 
   # resources :users do

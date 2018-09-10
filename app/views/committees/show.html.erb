@@ -7,12 +7,18 @@
           Committees I am on
         </div>
         <div class="panel-body">
-          <% @committees.each do |committee| %>
+          <% @user_committees.each do |committee| %>
 
-          <label>Committee Name: </label> <%= committee.name %>
+          <p><%= committee.name %> <%= link_to "Remove me", user_committee_path(:user_id => current_user.id, :id => committee.id), :method => :delete %></p>
 
           <%end %>
           <br />
           <br />
-          <%= render 'new' %>
+          Committees I can join:
+          <% @committees.each do |committee| %>
+            <% if !current_user.committees.include?(committee) %>
+
+              <%= link_to committee.name, user_add_committee_path(:committee_id => committee.id), :class => "btn btn-default"%>
+            <% end %>
+          <% end %>
         </div>
