@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  resources :committees
+  # devise_scope :user do
+  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    omniauth_callbacks: 'users/omniauth_callbacks'
 
   }
 
 
-resources :users, except: [:index, :show, :create, :edit, :update, :new, :destroy] do
+resources :users, except: [:index, :show, :create, :edit, :update, :new, :destroy, :delete] do
   resources :children
   resources :families
   resources :committees
@@ -15,6 +18,7 @@ end
   # resources :committees
   resources :profiles
   resources :memberships, only: [:show]
+  resources :committees
 
   namespace :admin do
     resources :users
