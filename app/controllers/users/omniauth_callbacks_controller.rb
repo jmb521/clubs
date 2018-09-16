@@ -12,7 +12,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     # You need to implement the method below in your model (e.g. app/models/user.rb)
    @user = User.from_omniauth(request.env["omniauth.auth"])
-      
+   @user.profile.first_name = request.env["omniauth.auth"].info.name.split(" ")[0]
+   @user.profile.last_name = request.env["omniauth.auth"].info.name.split(" ")[1]
+   @user.save
+   
    if @user.persisted?
      sign_in_and_redirect @user
 
