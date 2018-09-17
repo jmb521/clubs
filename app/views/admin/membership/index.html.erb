@@ -26,7 +26,12 @@
           <td><%= member.profile.city %></td>
           <td><%= member.profile.phone %></td>
           <td><%= member.role %></td>
-          <td><%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %></td>
+          <td>
+            <% if !current_user.admin? %>
+              <%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %></td>
+            <% else %>
+              <%= link_to "Make User", admin_make_user_path(:id => member.id), :class => "btn btn-default" %></td>
+            <% end %>
         </tr>
         <% end %>
       </tbody>
