@@ -32,7 +32,7 @@ class ChildrenController < ApplicationController
   end
   def create
     @child = current_user.children.create(children_params)
-    binding.pry
+    
     redirect_to user_children_path(@child.user_id)
 
   end
