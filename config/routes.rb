@@ -24,12 +24,13 @@ end
     resources :users
     resources :membership
     resources :committees
+    
     get '/pending' => "membership#pending"
     get '/make_user' => "membership#make_user"
     get '/dashboard' => "application#dashboard"
     get '/make_admin' => "membership#make_admin"
     get '/former' => "membership#former"
-
+    get '/demographics/kids' => "demographics#kids"
   end
 
   # resources :users do
