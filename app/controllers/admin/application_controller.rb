@@ -3,6 +3,15 @@ class Admin::ApplicationController < ApplicationController
   def dashboard
   end
 
+  def index
+    @users =  User.all
+
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
+  end
+
 
 
 
