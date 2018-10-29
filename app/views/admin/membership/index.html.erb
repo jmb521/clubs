@@ -27,10 +27,11 @@
           <td><%= member.profile.phone %></td>
           <td><%= member.role %></td>
           <td>
-            <% if !current_user.admin? %>
-              <%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %></td>
+
+            <% if member.admin? %>
+            <%= link_to "Make User", admin_make_user_path(:id => member.id), :class => "btn btn-default" %></td>
             <% else %>
-              <%= link_to "Make User", admin_make_user_path(:id => member.id), :class => "btn btn-default" %></td>
+            <%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %></td>
             <% end %>
         </tr>
         <% end %>
