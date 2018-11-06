@@ -82,7 +82,7 @@ Rails.application.configure do
   user_name:            'announcements@tcmottc.org',
   password:             ENV["announcements_password"],
 
-  
+
   authentication:       'plain',
   enable_starttls_auto: true }
   # Send deprecation notices to registered listeners.
