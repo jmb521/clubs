@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
   def home
@@ -21,7 +22,7 @@ class ApplicationController < ActionController::Base
 
   protected
   def after_sign_in_path_for(resource)
-      
+
       if resource
         users_path
       else
