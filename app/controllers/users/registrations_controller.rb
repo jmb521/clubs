@@ -12,8 +12,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    
-    UserSignUpMailer.with(user: @user).notification_user_signup.deliver_now
+
+    # UserSignUpMailer.with(user: @user).notification_user_signup.deliver_now
   end
 
   # GET /resource/edit
