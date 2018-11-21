@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
   #   end
   # end
 
+  def resale
+
+  end
+
+  def membership
+
+  end
+
   def is_admin
 
     if !current_user || !current_user.admin?

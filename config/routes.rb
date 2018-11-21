@@ -22,6 +22,8 @@ end
   resources :profiles
   resources :memberships, only: [:show]
   resources :committees
+  get 'resale' => "application#resale"
+  get 'membership' => "application#membership"
 
   namespace :admin do
     resources :users
