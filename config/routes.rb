@@ -23,7 +23,7 @@ end
   resources :memberships, only: [:show]
   resources :committees
   get 'resale' => "application#resale"
-  get 'membership' => "application#membership"
+  get 'membership' => "application#membership", as: "membership_info"
 
   namespace :admin do
     resources :users
