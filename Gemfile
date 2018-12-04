@@ -33,6 +33,8 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'sendgrid-ruby'
+gem 'sendgrid-actionmailer'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'devise'
