@@ -31,6 +31,10 @@
           <% end %>
         </ul>
         <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Resale", resale_path %></li>
+          <li><%= link_to "Membership", membership_info_path %></li>
+
           <% if user_signed_in? %>
             <li><%= link_to "Home", users_path %></li>
             <li><%= link_to "Profile", profile_path(current_user.id, current_user.id) %></li>
