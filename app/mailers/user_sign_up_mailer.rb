@@ -1,6 +1,6 @@
 class UserSignUpMailer < Devise::Mailer
   helper :application
-  default from: 'announcements@tcmottc.org'
+  # default from: 'announcements@tcmottc.org'
   def notification_user_signup
 
     @user = params[:user]
