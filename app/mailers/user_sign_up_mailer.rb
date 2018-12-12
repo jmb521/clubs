@@ -5,7 +5,7 @@ class UserSignUpMailer < Devise::Mailer
 
     @user = params[:user]
     # @url  = 'http://example.com/login'
-    mail(to: 'jmp521@gmail.com', subject: '#{@user.profile.first_name} has signed up')
-  
+    mail(to: 'jmp521@gmail.com', subject: '#{@user.email} has signed up')
+
   end
 end
