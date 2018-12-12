@@ -28,17 +28,17 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-  address:              'announcements@tcmottc.org',
-  port:                 80,
-  domain:               'pop.secureserver.net',
-  user_name:            'announcements@tcmottc.org',
-  password:             ENV["announcements_password"],
-
-  authentication:       'plain',
-  enable_starttls_auto: true }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  # address:              'announcements@tcmottc.org',
+  # port:                 80,
+  # domain:               'pop.secureserver.net',
+  # user_name:            'announcements@tcmottc.org',
+  # password:             ENV["announcements_password"],
+  #
+  # authentication:       'plain',
+  # enable_starttls_auto: true }
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
