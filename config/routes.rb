@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   }
 
 
+
+
 resources :users, except: [:index, :show, :create, :edit, :update, :new, :destroy, :delete] do
   resources :children
   resources :families

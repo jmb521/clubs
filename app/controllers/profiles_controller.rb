@@ -11,6 +11,16 @@ class ProfilesController < ApplicationController
 
   end
 
+  def new
+    @profile = Profile.new
+  end
+
+  def create
+    binding.pry
+    @profile = Profile.create(profile_params)
+    redirect_to new_user_family_path
+  end
+
   def update
 
     @profile = Profile.find(params[:id])
