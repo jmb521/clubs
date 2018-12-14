@@ -18,7 +18,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
-    
+    @profile.save
     redirect_to new_user_family_path(current_user.id)
   end
 
