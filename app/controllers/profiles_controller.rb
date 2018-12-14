@@ -16,9 +16,10 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    binding.pry
-    @profile = Profile.create(profile_params)
-    redirect_to new_user_family_path
+    @profile = Profile.new(profile_params)
+    @profile.user_id = current_user.id
+    
+    redirect_to new_user_family_path(current_user.id)
   end
 
   def update
