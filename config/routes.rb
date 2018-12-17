@@ -18,10 +18,11 @@ resources :users, except: [:index, :show, :create, :edit, :update, :new, :destro
   resources :children
   resources :families
   resources :committees
+  resources :profiles
   get 'add_committee' => "committees#add_user_to_committee"
 end
   # resources :committees
-  resources :profiles
+  
   resources :memberships, only: [:show]
   resources :committees
   get 'resale' => "application#resale"
