@@ -58,7 +58,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     super(resource)
-    "/profiles/new"
+
+    "/users/#{resource.id}/profiles/new"
+    
+    # UserSignUpMailer.notification_user_signup(current_user).deliver_now()
   end
 
   # The path used after sign up for inactive accounts.

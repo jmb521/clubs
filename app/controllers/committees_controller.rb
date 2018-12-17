@@ -7,7 +7,7 @@ class CommitteesController < ApplicationController
 
   def create
     @committee = UserCommittee.create(:user_id => params[:user_id], :committee_id => params[:user_committee][:committee])
-    redirect_back(fallback_location: profile_path(current_user.profile))
+    redirect_back(fallback_location: user_profile_path(current_user.profile))
   end
 
   def update

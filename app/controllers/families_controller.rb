@@ -18,6 +18,19 @@ class FamiliesController < ApplicationController
     @family = Family.find(params[:id])
   end
 
+  def new
+    @user = User.find_by(:id => params[:user_id])
+    @family = Family.new
+  end
+
+  def create
+    @user = User.find(params[:user_id])
+    @family = Family.new(family_params)
+    @family.user_id = @user.id
+    @family.save
+    UserSignUpMailer.notification_user_signup(@user).deliver_now()
+    redirect_to new_user_child_path(@user)
+  end
 
   private
 
