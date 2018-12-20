@@ -32,7 +32,7 @@
           <br />
           <label>Phone: </label><%= @profile.phone %>
           <br />
-          <%= link_to "Edit Profile", edit_profile_path(@profile), class: "btn btn-default" %>
+          <%= link_to "Edit Profile", edit_user_profile_path(@profile.user_id), class: "btn btn-default" %>
           <%= link_to "Edit Family", edit_user_family_path(@profile.user_id), class: "btn btn-default" %>
           <% if current_user.children.length >0  %>
             <%= link_to "Edit Children", user_children_path(@profile.user_id), class: "btn btn-default" %>

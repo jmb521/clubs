@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-
+    @user = User.find(params[:user_id])
     @profile = Profile.find(params[:id])
 
   end
@@ -28,7 +28,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @profile.update(profile_params)
     @profile.save
-    redirect_to profile_path(@profile)
+    redirect_to user_profile_path(@profile)
     # @family = Family.find_by(:user_id => @profile.user_id)
     # if !@family
     #   redirect_to edit_user_family_path(@profile.user_id)

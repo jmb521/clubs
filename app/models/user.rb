@@ -12,7 +12,7 @@ class User < ApplicationRecord
         has_many :committees, :through => :user_committees
 
         # after_create :create_family
-        # after_create :create_membership
+        after_create :create_membership
         # after_create :create_profile
 
 
