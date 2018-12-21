@@ -1,0 +1,2 @@
+class SiteIssue < ApplicationRecord
+end

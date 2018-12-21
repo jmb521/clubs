@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :site_issues
   namespace :admin do
     resources :site_settings
   end
