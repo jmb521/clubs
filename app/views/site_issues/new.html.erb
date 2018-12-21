@@ -1,0 +1,15 @@
+<%= form_for @site_issues do |t| %>
+  <%= t.label :name %>
+  <%= t.text_field :name %>
+  <br />
+  <br />
+  <%= t.label :email %>
+  <%= t.text_field :email %>
+  <br />
+  <br />
+  <%= t.label :concern %>
+  <%= t.text_area :concern %>
+  <br />
+  <br />
+  <%= t.submit %>
+<% end %>
