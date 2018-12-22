@@ -23,9 +23,10 @@ resources :users, except: [:index, :show, :create, :edit, :update, :new, :destro
   get 'add_committee' => "committees#add_user_to_committee"
 end
   # resources :committees
-  
+
   resources :memberships, only: [:show]
   resources :committees
+  resources :site_issues, only: [:new, :create]
   get 'resale' => "application#resale"
   get 'membership' => "application#membership", as: "membership_info"
 
