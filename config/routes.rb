@@ -37,7 +37,7 @@ end
 
     get '/site_issues' => "site_issues#index", as: "site_issues"
     delete '/site_issues/:id'=> "site_issues#destroy", as: "destroy_site_issues"
-
+    delete '/membership/:id' => "membership#destroy", as: "destroy_user"
     get '/pending' => "membership#pending"
     get '/make_user' => "membership#make_user"
     get '/dashboard' => "application#dashboard"

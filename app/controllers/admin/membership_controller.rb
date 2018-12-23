@@ -26,4 +26,10 @@ class Admin::MembershipController < ApplicationController
 
     redirect_back(fallback_location: admin_dashboard_path)
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_back(fallback_location: admin_dashboard_path)
+  end
 end
