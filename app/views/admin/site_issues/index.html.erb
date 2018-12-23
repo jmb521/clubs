@@ -1,0 +1,8 @@
+<% @site_issues.each do |site_issue| %>
+<br />
+<br />
+<%= site_issue.name %>
+<%= site_issue.email %>
+<%= site_issue.concern %>
+<%= link_to "Destroy", admin_destroy_site_issues_path(site_issue.id), method: :delete %>
+<% end %>
