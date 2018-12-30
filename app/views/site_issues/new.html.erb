@@ -1,15 +1,31 @@
-<%= form_for @site_issues do |t| %>
-  <%= t.label :name %>
-  <%= t.text_field :name %>
-  <br />
-  <br />
-  <%= t.label :email %>
-  <%= t.text_field :email %>
-  <br />
-  <br />
-  <%= t.label :concern %>
-  <%= t.text_area :concern %>
-  <br />
-  <br />
-  <%= t.submit %>
-<% end %>
+<div class="container from-top">
+  <%= form_for @site_issues do |t| %>
+    <div class="form-group row">
+      <%= t.label :name, class: "col-sm-1 col-form-label" %>
+      <div class="col-sm-4">
+        <%= t.text_field :name, class: "form-control", placeholder: "Name"%>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <%= t.label :email, class: "col-sm-1 col-form-label" %>
+      <div class="col-sm-4">
+        <%= t.text_field :email, class: "form-control", placeholder: "Email" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <%= t.label :concern, class: "col-sm-1 col-form-label" %>
+      <div class="col-sm-4">
+        <%= t.text_area :concern, placeholder: "Concern", class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-4">
+
+        <%= t.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
