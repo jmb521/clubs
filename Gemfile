@@ -43,7 +43,7 @@ gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'rubyzip'
+gem "rubyzip", "~> 1.2.2"
 gem 'axlsx', '= 2.0.1'
 gem 'axlsx_rails'
 
