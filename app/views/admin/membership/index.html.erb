@@ -14,6 +14,7 @@
         <th>Phone</th>
         <th>Role</th>
         <th>Update Membership</th>
+        <th>Delete Membership</th>
       </tr>
       <tbody>
         <% @user.each do |member| %>
@@ -29,10 +30,12 @@
           <td>
 
             <% if member.admin? %>
-            <%= link_to "Make User", admin_make_user_path(:id => member.id), :class => "btn btn-default" %></td>
+            <%= link_to "Make User", admin_make_user_path(:id => member.id), :class => "btn btn-default" %>
             <% else %>
-            <%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %></td>
+            <%= link_to "Make Admin", admin_make_admin_path(:id => member.id), :class => "btn btn-default" %>
             <% end %>
+          </td>
+          <td><%= link_to "Delete member", admin_destroy_user_path(:id => member.id), method: :delete, :class => "btn btn-danger" %>
         </tr>
         <% end %>
       </tbody>
