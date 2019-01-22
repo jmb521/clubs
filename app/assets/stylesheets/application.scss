@@ -36,3 +36,16 @@
 .from-top {
   margin-top: 50px;
 }
+
+.side-nav {
+  float: left;
+  width: 150px;
+  background-color: #222222;
+  height: 100vh;
+  position: fixed;
+  margin-top: -22px;
+}
+.side-nav a {
+  margin: 25px;
+
+}

@@ -62,6 +62,15 @@
         </ul>
       </div>
     </nav>
+    <% if user_signed_in? %>
+    <nav class="nav flex-column side-nav navbar-dark navbar bg-dark">
+      <div class="container">
+        <%= link_to "Dashboard", admin_dashboard_path, :class => "nav navbar-nav nav-item" %>
+      </div>
+    </nav>
+    <% end %>
+
+
     <%= yield %>
         <footer class="footer">
           <div class="container">
