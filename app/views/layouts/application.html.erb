@@ -10,63 +10,78 @@
   </head>
 
   <body>
-    <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=1179558835425355&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-    <nav class="navbar navbar-inverse">
-      <div class="container">
+    <div class="container main-body">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="TCMOTTC.jpg" alt="TCMOTTC" class="logo" />
+        </div>
+        <div class="col-lg-10">
+          <h3 class="offeringsupport">Offering Support, Education and Friendship to Families with or Expecting Multiples</h3>
 
-        <ul class="nav navbar-nav navbar-right">
-          <% if user_signed_in? %>
-            <li class="navbar-text">Welcome, <%= current_user.email %></li>
-            <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-          <% else %>
-            <li><%= link_to "Sign Up", new_user_registration_path %></li>
-            <li><%= link_to "Sign In", new_user_session_path %></li>
-          <% end %>
-        </ul>
-        <ul class="nav navbar-nav navbar-left">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Resale", resale_path %></li>
-          <li><%= link_to "Membership", membership_info_path %></li>
-
-          <% if user_signed_in? %>
-            <li><%= link_to "Home", users_path %></li>
-            <% if current_user.profile %>
-              <li><%= link_to "Profile", user_profile_path(current_user, current_user.profile.id) %></li>
-              <% end %>
-            <% end %>
-
-        </ul>
+        </div>
       </div>
-    </nav>
-    <% if user_signed_in? && current_user.admin? %>
-    <nav class="nav flex-column navbar-dark navbar bg-dark side-nav">
-      <!-- <div class="container"> -->
-        <ul>
-          <li><%= link_to "Dashboard", admin_dashboard_path, :class => "nav navbar-nav nav-item" %></li>
-          <li><%= link_to "All Members", admin_membership_index_path, :class => "nav navbar-nav" %></li>
-          <li><a href="/admin/pending" class="nav navbar-nav">Pending Members      <span class="badge"><%= pending_count %></span></a></li>
-          <li><%= link_to "Committees", admin_committees_path, :class=> "nav navbar-nav" %></li>
-          <li><%= link_to "Demographics", admin_demographics_kids_path, :class =>  "nav navbar-nav" %></li>
-        </ul>
 
-      <!-- </div> -->
-    </nav>
-    <% end %>
+    <div class="row">
+      <nav class="navbar">
+        <!-- <div class="container"> -->
+        <div class="col-lg-8">
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "About Us", about_us_path %></li>
+            <li><%= link_to "Resale", resale_path %></li>
+            <li><%= link_to "Membership", membership_info_path %></li>
 
+            <% if user_signed_in? %>
+              <li><%= link_to "Home", users_path %></li>
+              <% if current_user.profile %>
+                <li><%= link_to "Profile", user_profile_path(current_user, current_user.profile.id) %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col-md-4">
+              <ul class="nav navbar-nav navbar-right">
+                <% if user_signed_in? %>
+                <li class="navbar-text">Welcome, <%= current_user.email %></li>
+                <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
+                <% else %>
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li><%= link_to "Sign In", new_user_session_path %></li>
+                <% end %>
+              </ul>
+
+        <!-- </div> -->
+      </nav>
+      <% if user_signed_in? && current_user.admin? %>
+      <nav class="nav flex-column navbar-dark navbar bg-dark side-nav">
+        <!-- <div class="container"> -->
+          <ul>
+            <li><%= link_to "Dashboard", admin_dashboard_path, :class => "nav navbar-nav nav-item" %></li>
+            <li><%= link_to "All Members", admin_membership_index_path, :class => "nav navbar-nav" %></li>
+            <li><a href="/admin/pending" class="nav navbar-nav">Pending Members      <span class="badge"><%= pending_count %></span></a></li>
+            <li><%= link_to "Committees", admin_committees_path, :class=> "nav navbar-nav" %></li>
+            <li><%= link_to "Demographics", admin_demographics_kids_path, :class =>  "nav navbar-nav" %></li>
+          </ul>
+
+        <!-- </div> -->
+      </nav>
+
+      <% end %>
+    <!-- </div> -->
+    </div>
+
+      <div class="row">
 
     <%= yield %>
+  </div>
+</div>
+
         <footer class="footer">
           <div class="container">
             <span class="text-muted">Site issue? <%= link_to "Click here", new_site_issue_path %></span>
           </div>
       </footer>
+
     <!-- <nav class="navbar fixed-bottom navbar-light bg-light sticky-bottom">
 
       <div class="container">
@@ -76,5 +91,15 @@
           </ul>
       </div>
 </nav> -->
+<!-- <div id="fb-root"> -->
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.1&appId=1179558835425355&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+</div>
+<!-- </div> -->
   </body>
 </html>
