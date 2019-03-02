@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0'
 gem 'figaro'
 gem 'jquery-rails'
-gem "bootstrap-sass", ">= 3.4.1"
+gem "bootstrap-sass"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'sendgrid-ruby'
@@ -43,9 +43,11 @@ gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-gem "rubyzip", "~> 1.2.2"
-gem 'axlsx', '= 2.0.1'
+# gem 'rubyzip', '~> 1.1.7'
+gem "rubyzip", "~> 1.2", ">= 1.2.2"
+gem 'axlsx'
 gem 'axlsx_rails'
+gem 'bundler', '~> 1.16', '>= 1.16.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
