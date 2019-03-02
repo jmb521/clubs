@@ -28,6 +28,7 @@ end
   resources :committees
   resources :site_issues, only: [:new, :create]
   get 'resale' => "application#resale"
+  get 'about_us' => "application#about_us"
   get 'membership' => "application#membership", as: "membership_info"
 
   namespace :admin do
