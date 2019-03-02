@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0'
 gem 'figaro'
 gem 'jquery-rails'
-gem 'bootstrap-sass'
+gem "bootstrap-sass", ">= 3.4.1"
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'sendgrid-ruby'
