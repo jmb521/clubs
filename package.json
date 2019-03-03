@@ -2,6 +2,6 @@
   "name": "clubs",
   "private": true,
   "dependencies": {
-    "bootstrap": "^3.4.0"
+    "bootstrap": "^3.4.1"
   }
 }
