@@ -30,13 +30,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0'
 gem 'figaro'
 gem 'jquery-rails'
-gem "bootstrap-sass"
-
+# gem "bootstrap-sass"
+gem 'bootstrap', '~> 4.3.1'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'sendgrid-ruby'
 gem 'sendgrid-actionmailer'
 # Use ActiveStorage variant
+gem 'sprockets-rails', '>2.3.2'
+gem "autoprefixer-rails"
 # gem 'mini_magick', '~> 4.8'
 gem 'devise'
 # Use Capistrano for deployment
