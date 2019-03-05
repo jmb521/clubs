@@ -26,8 +26,7 @@
       <div class="container">
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- <div class="collapse navbar-collapse"> -->
-            <div class="navbar-nav col-lg-8">
+            <div class="navbar-nav col-lg-8" id="nav-left">
               <%= link_to "Home", root_path, :class =>  "nav-item, nav-link" %>
               <%= link_to "About Us", about_us_path, :class => "nav-item, nav-link" %>
               <%= link_to "Resale", resale_path, :class => "nav-item, nav-link" %>
@@ -37,7 +36,7 @@
                 <%= link_to "Profile", user_profile_path(current_user, current_user.profile.id), :class => "nav-item, nav-link" %>
               <% end %>
             </div>
-            <div class="navbar-nav justify-content-end col-sm-4">
+            <div class="navbar-nav justify-content-end col-sm-4" nav-right>
               <% if user_signed_in? %>
               <span class="navbar-text">Welcome, <%= current_user.email %></span>
                 <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => "nav-item, nav-link" %>
@@ -50,9 +49,11 @@
           </nav>
       </div>
     </div>
-      <!-- <% if user_signed_in? && current_user.admin? %> -->
-      <!-- <nav class="nav flex-column navbar-dark navbar bg-dark side-nav"> -->
-        <!-- <div class="container">
+
+      <% if user_signed_in? && current_user.admin? %>
+    <div class="row">
+      <nav class="nav flex-column navbar-dark navbar bg-dark side-nav">
+        <div class="container">
           <ul>
             <li><%= link_to "Dashboard", admin_dashboard_path, :class => "nav navbar-nav nav-item" %></li>
             <li><%= link_to "All Members", admin_membership_index_path, :class => "nav navbar-nav" %></li>
@@ -61,35 +62,33 @@
             <li><%= link_to "Demographics", admin_demographics_kids_path, :class =>  "nav navbar-nav" %></li>
           </ul>
 
-      </nav>
-
-      <!-- <% end %> -->
-
-      <!-- <hr /> -->
+      <hr />
     </div>
-  <!-- </div> -->
+  </nav>
+</div>
+<% end %>
 <!-- </div> -->
 
   <div class="row">
-
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </div>
-</div>
+<!-- </div> -->
+<div class="row align-items-end">
+  <!-- <div class="container-fluid"> -->
+    <!-- <div class="col-12"> -->
         <footer class="footer">
-          <div class="container">
+          <div class="container-fluid">
             <span class="text-muted">Site issue? <%= link_to "Click here", new_site_issue_path %></span>
           </div>
       </footer>
+    </div>
+  <!-- </div> -->
+<!-- </div> -->
+</div>
 
-    <!-- <nav class="navbar fixed-bottom navbar-light bg-light sticky-bottom">
 
-      <div class="container">
-          <ul class="nav navbar-nav">
-            <li>test1</li>
-            <li>test2</li>
-          </ul>
-      </div>
-</nav> -->
 <!-- <div id="fb-root"> -->
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
