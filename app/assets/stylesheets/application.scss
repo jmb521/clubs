@@ -82,8 +82,9 @@ div#nav-left a:hover, div#nav-right a:hover {
   color: white;
 }
 
-.background-image {
+
+#background-image {
   background-image: url("/tcmottc5.jpeg");
-  width: 600px;
-  height: auto;
+  background-position: center;
+  background-size: cover;
 }
