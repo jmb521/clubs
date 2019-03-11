@@ -23,10 +23,10 @@
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
         <% if user_signed_in? %>
-        <span class="navbar-text">Welcome, <%= current_user.email %></span>
+        <span class="navbar-text">Welcome, <%= current_user.email %>  &nbsp; &nbsp;</span>
         <%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %>
         <% else %>
-        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-sm btn-outline-secondary" %>
+        <%= link_to "Sign Up", new_user_registration_path, :class => "btn btn-sm btn-outline-secondary" %>&nbsp;&nbsp;
         <%= link_to "Sign In", new_user_session_path, :class => "btn btn-sm btn-outline-secondary" %>
         <% end %>
 
