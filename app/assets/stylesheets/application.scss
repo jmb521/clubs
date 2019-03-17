@@ -91,7 +91,12 @@ div#nav-left a:hover, div#nav-right a:hover {
 
 #tag-line {
   color: #e9ebee;
+  box-shadow: 5px #e9ebee;
 }
 footer {
-  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  // display: inline-block;
+  // box-sizing: border-box;
 }
