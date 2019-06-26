@@ -19,16 +19,16 @@ class User < ApplicationRecord
 
 
 
-           enum role: [:former, :applicant, :member, :admin]
-         after_initialize :set_default_role, :if => :new_record?
+          #  enum role: [:former, :applicant, :member, :admin]
+        #  after_initialize :set_default_role, :if => :new_record?
 
-         def set_default_role
-           self.role ||= :applicant
-         end
+        #  def set_default_role
+        #    self.role ||= :applicant
+        #  end
 
-         def is_admin
-           user.admin?
-         end
+        #  def is_admin
+        #    user.admin?
+        #  end
 
 
       def self.from_omniauth(auth)

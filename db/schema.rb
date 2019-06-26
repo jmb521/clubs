@@ -15,14 +15,6 @@ ActiveRecord::Schema.define(version: 2018_12_21_020337) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "admin_site_settings", force: :cascade do |t|
-    t.string "page_name"
-    t.string "id_or_class_name"
-    t.string "value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "children", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
