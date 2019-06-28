@@ -45,7 +45,7 @@ gem "autoprefixer-rails"
 gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'simple_form'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 # gem 'rubyzip', '~> 1.1.7'

@@ -234,6 +234,9 @@ GEM
     sendgrid-ruby (5.3.0)
       ruby_http_client (~> 3.3.0)
       sinatra (>= 1.4.7, < 3)
+    simple_form (4.1.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     sinatra (2.0.5)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -305,6 +308,7 @@ DEPENDENCIES
   selenium-webdriver
   sendgrid-actionmailer
   sendgrid-ruby
+  simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-rails (> 2.3.2)
@@ -318,4 +322,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
