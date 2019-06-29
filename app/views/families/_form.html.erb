@@ -7,22 +7,16 @@
         </div>
         <div class="panel-body">
 
-          <%= form_for [@user, @family] do |f| %>
-            <div class="form-group col-lg-12">
-              <label>User Birthday</label>
-              <%= f.date_select :user_birthday, start_year: 1950 %>
-            </div>
-            <div class="form-group col-lg-12">
-              <label>Spouse</label>
-              <%= f.text_field :spouse %>
-            </div>
-            <div class ="form-group col-lg-12">
-              <label>Spouse Birthday</label>
-              <%= f.date_select :spouse_birthday, start_year: 1950 %>
-            </div>
-            <div class="form-group col-lg-12">
+          <%= simple_form_for [@user, @family] do |f| %>
+            
+              <%= f.input :user_birthday, start_year: 1950 %>
+   
+              <%= f.input :spouse %>
+            
+              <%= f.input :spouse_birthday, start_year: 1950 %>
+            
               <%= f.submit %>
-            </div>
+            
           <% end %>
         </div>
       </div>

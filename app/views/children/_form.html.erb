@@ -6,16 +6,14 @@
           Children
         </div>
         <div class="panel-body">
-          <%= form_for [@user, @child] do |f| %>
+          <%= simple_form_for [@user, @child] do |f| %>
           <%= f.hidden_field :user_id, value: current_user.id %>
-          <div class="form-group col-lg-12">
-          <label>Name: </label>
-          <%= f.text_field :name %>
-          </div>
-          <div class="form-group col-lg-12">
-            <label>Birthday: </label>
-            <%= f.date_select :birthday, start_year: 1950 %>
-          </div>
+          
+          <%= f.input :name %>
+          
+          
+            <%= f.input :birthday, start_year: 1950 %>
+          
 
           <div class="form-group col-lg-12">
             <%= f.submit %>
