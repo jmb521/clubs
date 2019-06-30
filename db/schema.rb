@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_28_175908) do
+ActiveRecord::Schema.define(version: 2019_06_30_045659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,15 +63,6 @@ ActiveRecord::Schema.define(version: 2019_06_28_175908) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "families", force: :cascade do |t|
-    t.integer "user_id"
-    t.datetime "user_birthday"
-    t.string "spouse"
-    t.datetime "spouse_birthday"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "memberships", force: :cascade do |t|
     t.boolean "is_member", default: false
     t.integer "user_id"
@@ -100,6 +91,9 @@ ActiveRecord::Schema.define(version: 2019_06_28_175908) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthday"
+    t.string "spouse"
+    t.date "spouse_birthday"
   end
 
   create_table "site_issues", force: :cascade do |t|
