@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
 resources :users, except: [:index, :show, :create, :edit, :update, :new, :destroy, :delete] do
   resources :children
-  resources :families
+  
   resources :committees
   resources :profiles
   get 'add_committee' => "committees#add_user_to_committee"
