@@ -3,19 +3,60 @@
     <div class="col-md-3">
     </div>
     <div class="col-md-6">
+      <div class="card">
+        <div class="card-header sign-up">
+          Signing up as a new member is rewarding! <br />Make sure to add your kids names and birthdays once you sign up.
+        </div>
+        <div class="card-body">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> 
         <%= f.error_notification %>
-        
+
+        <%=f.fields_for :profile do |p| %>
+          <div class="row">
+            <div class="col-md-6">
+              <%= p.input :first_name %>
+            </div>
+            <div class="col-md-6">
+              <%= p.input :last_name %>
+            </div>
+           </div>
+          <%= p.input :address1, label: "Address" %>
+          <%= p.input :address2, label: "Address", hint: "P.O. Box/Unit #" %>
+          <div class="row">
+          <div class="col-md-6">
+            <%= p.input :city %>
+          </div>
+          <div class="col-md-2">
+            <%= p.input :state, value: "Illinois" %>
+          </div>
+          <div class="col-md-4">
+            <%= p.input :zipcode %>
+          </div>
+        </div>
+          <%= p.input :phone %>
+          <%= p.input :birthday, :order => [ :month, :day], :discard_year => true, hint: "We use this for birthday cards and shoutouts on Social Media"
+          %>
+          <%= p.input :spouse, hint: "*We are a family club, so your spouse has membership too!" %>
+          <%= p.input :spouse_birthday, :order => [:month, :day], :discard_year => true %>
+        <% end %>
+          <hr />
         <%= f.input :email, prepend: "@", input_html: {autocomplete: 'email' } %>
+
         <%= f.input :password, :append => "Password" %>
         <%= f.input :password_confirmation %>
+        <div class="row">
+        <div class="col-md-5">
+        <%= f.button :submit, value: "Sign Up", class: "btn-primary btn-length" %>
+        </div>
+        <div class="col-sm-2">
+        </div>
+        <div class="col-md-5">
 
-        <%= f.button :submit, value: "Submit", class: "btn-primary btn-length" %>
-        <br />
-        <br />
-
-              <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links" %>
+        </div>
       <% end %>
+      </div>
+      </div>
     </div>
     <div class="col-md-3">
     </div>

@@ -10,10 +10,10 @@ class User < ApplicationRecord
         has_one :membership, :autosave => true
         has_many :user_committees
         has_many :committees, :through => :user_committees
-
+        accepts_nested_attributes_for :profile
         # after_create :create_family
         after_create :create_membership
-        # after_create :create_profile
+        
 
 
 

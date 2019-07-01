@@ -6,7 +6,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super
+    # super
+    @user = User.new
+    
+    @user.build_profile
+    
   end
 
   # POST /resource
@@ -14,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # binding.pry
 
    super
-
+    binding.pry
 
     # UserSignUpMailer.with(user: @user).notification_user_signup.deliver_now
   end
@@ -47,7 +51,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute], profile_attributes: [
+      :first_name, :last_name, :address1, :address2, :city, :state, :zipcode, :phone, :birthday, :spouse, :spouse_birthday
+    ])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
