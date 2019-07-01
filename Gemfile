@@ -41,6 +41,7 @@ gem 'sendgrid-actionmailer'
 # Use ActiveStorage variant
 gem 'sprockets-rails', '>2.3.2'
 gem "autoprefixer-rails"
+gem 'omniauth-rails_csrf_protection', '0.1.2'
 # gem 'mini_magick', '~> 4.8'
 gem 'devise'
 # Use Capistrano for deployment
