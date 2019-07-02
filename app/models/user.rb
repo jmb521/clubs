@@ -4,13 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-        has_one :profile, :autosave => true
+        has_one :profile
+        accepts_nested_attributes_for :profile
         has_many :children
-        has_one :family, :autosave => true
+        
         has_one :membership, :autosave => true
         has_many :user_committees
         has_many :committees, :through => :user_committees
-        accepts_nested_attributes_for :profile
         # after_create :create_family
         after_create :create_membership
         

@@ -33,12 +33,13 @@
             <%= p.input :zipcode %>
           </div>
         </div>
-          <%= p.input :phone %>
+          <%= p.input :phone, hint: "No spaces or dashes" %>
           <%= p.input :birthday, :order => [ :month, :day], :discard_year => true, hint: "We use this for birthday cards and shoutouts on Social Media"
           %>
           <%= p.input :spouse, hint: "*We are a family club, so your spouse has membership too!" %>
           <%= p.input :spouse_birthday, :order => [:month, :day], :discard_year => true %>
         <% end %>
+        <br />
           <hr />
         <%= f.input :email, prepend: "@", input_html: {autocomplete: 'email' } %>
 
