@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_06_30_045659) do
-=======
 ActiveRecord::Schema.define(version: 2019_06_26_180514) do
->>>>>>> remove_admin
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,20 +22,8 @@ ActiveRecord::Schema.define(version: 2019_06_26_180514) do
     t.bigint "resource_id"
     t.string "author_type"
     t.bigint "author_id"
-<<<<<<< HEAD
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
-  end
 
-  create_table "admin_site_settings", force: :cascade do |t|
-    t.string "page_name"
-    t.string "id_or_class_name"
-    t.string "value"
-=======
->>>>>>> remove_admin
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
