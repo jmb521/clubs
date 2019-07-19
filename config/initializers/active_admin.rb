@@ -309,4 +309,8 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
+  config.authentication_method = :authenticate_user!
+  config.current_user_method   = :current_user
+  config.logout_link_path      = :destroy_user_session_path
+  config.logout_link_method    = :delete
 end
