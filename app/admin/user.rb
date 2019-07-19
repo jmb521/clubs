@@ -16,18 +16,22 @@ form do |f|
       f.input :email
       f.input :password
       f.input :password_confirmation
-      f.input :superadmin, :label => "Super Administrator"
+      f.input :role, collection: ["former","applicant", "member", "admin"]
     end
-    f.buttons
+    f.button "Submit"
   end
 
   create_or_edit = Proc.new {
-    @user            = User.find_or_create_by_id(params[:id])
-    @user.superadmin = params[:user][:superadmin]
-    @user.attributes = params[:user].delete_if do |k, v|
-      (k == "superadmin") ||
-      (["password", "password_confirmation"].include?(k) && v.empty? && !@user.new_record?)
-    end
+    @user            = User.find_or_create_by(id: params[:id])
+    # @user.superadmin = params[:user][:superadmin]
+    # @user.attributes = params[:user].delete_if do |k, v|
+      # binding.pry
+      # (k == "role") ||
+      # (["password", "password_confirmation"].include?(k) && v.empty? && !@user.new_record?)
+    # end
+    
+    @user.role = params[:user][:role]
+    
     if @user.save
       redirect_to :action => :show, :id => @user.id
     else

@@ -2,18 +2,23 @@
   
   <div class="nav-scroller py-1 mb-2">
   <div class="row">
-  <div class="col-sm-1">
+  <div class="col-sm-2">
   <img src="/TCMOTTC.jpg" alt="TCMOTTC" class="logo" height="75" width="75" />
   </div>
-  <div class="col-md-8">
-    <nav class="nav d-flex justify-content-between">
-      <%= link_to "Home", root_path, :class =>  "p-1 text-muted" %>
-      <%= link_to "About Us", about_us_path, :class => "p-1 text-muted" %>
-      <%= link_to "Resale", resale_path, :class => "p-1 text-muted" %>
-      <%= link_to "Membership", membership_info_path, :class => "p-1 text-muted" %>
+  <div class="col-md-7">
+    <nav class="nav">
+      
+      <%= link_to "Home", root_path, :class =>  "col p-1 text-muted" %>
+      <%= link_to "About Us", about_us_path, :class => "col p-1 text-muted" %>
+      <%= link_to "Resale", resale_path, :class => "col p-1 text-muted" %>
+      <%= link_to "Membership", membership_info_path, :class => "col p-1 text-muted" %>
       <% if user_signed_in? && current_user.profile %>
-        <%= link_to "Member Area", users_path, :class => "p-1 text-muted" %>
-        <%= link_to "Profile", user_profile_path(current_user, current_user.profile.id), :class => "p-1 text-muted" %>
+        <%= link_to "Member Area", users_path, :class => "col p-1 text-muted" %>
+        <%= link_to "Profile", user_profile_path(current_user, current_user.profile.id), :class => "col p-1 text-muted" %>
+      <% end %>
+      
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to "Admin", admin_root_path, :class => "col p-1 text-muted" %>
       <% end %>
       
     </nav>
