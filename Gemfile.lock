@@ -25,9 +25,12 @@ GEM
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
 <<<<<<< HEAD
+<<<<<<< HEAD
     activejob (5.2.3)
       activesupport (= 5.2.3)
 =======
+=======
+>>>>>>> b229912fd62d9e74973df60cb2b024fb9fa715f2
     activeadmin (2.0.0)
       arbre (~> 1.2, >= 1.2.1)
       formtastic (~> 3.1)
@@ -40,9 +43,14 @@ GEM
       sass (~> 3.4)
       sprockets (>= 3.0, < 4.1)
       sprockets-es6 (~> 0.9, >= 0.9.2)
+<<<<<<< HEAD
     activejob (5.2.2.1)
       activesupport (= 5.2.2.1)
 >>>>>>> remove_admin
+=======
+    activejob (5.2.3)
+      activesupport (= 5.2.3)
+>>>>>>> b229912fd62d9e74973df60cb2b024fb9fa715f2
       globalid (>= 0.3.6)
     activemodel (5.2.3)
       activesupport (= 5.2.3)
@@ -76,18 +84,27 @@ GEM
       axlsx
       rails (>= 3.1)
 <<<<<<< HEAD
+<<<<<<< HEAD
     bcrypt (3.1.13)
     bindex (0.7.0)
     bootsnap (1.4.4)
 =======
+=======
+>>>>>>> b229912fd62d9e74973df60cb2b024fb9fa715f2
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+<<<<<<< HEAD
     bcrypt (3.1.12)
     bindex (0.5.0)
     bootsnap (1.4.1)
 >>>>>>> remove_admin
+=======
+    bcrypt (3.1.13)
+    bindex (0.7.0)
+    bootsnap (1.4.4)
+>>>>>>> b229912fd62d9e74973df60cb2b024fb9fa715f2
       msgpack (~> 1.0)
     bootstrap (4.3.1)
       autoprefixer-rails (>= 9.1.0)
@@ -156,9 +173,13 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
     jwt (2.2.1)
 =======
     jwt (2.1.0)
+=======
+    jwt (2.2.1)
+>>>>>>> b229912fd62d9e74973df60cb2b024fb9fa715f2
     kaminari (1.1.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.1.1)
@@ -171,7 +192,10 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
+<<<<<<< HEAD
 >>>>>>> remove_admin
+=======
+>>>>>>> b229912fd62d9e74973df60cb2b024fb9fa715f2
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
