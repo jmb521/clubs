@@ -18,7 +18,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
     
     super
-    binding.pry
+    
 
     # UserSignUpMailer.with(user: @user).notification_user_signup.deliver_now
   end
