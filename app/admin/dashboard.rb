@@ -16,7 +16,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "New Members" do
           ul do
             User.last(5).map do |user|
-              li link_to(user.profile.first_name + " " + user.profile.last_name, user_profile_path(user.id, user.id))
+              li link_to("#{user.profile.first_name} #{user.profile.last_name}", user_profile_path(user.id, user.id))
             end
           end
         end
