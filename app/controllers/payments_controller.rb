@@ -20,11 +20,6 @@ class PaymentsController < ApplicationController
         @payment = Payment.find(params[:id])
     end
 
-    def destroy
-        @payment = Payment.find(params[:id])
-    end
-
-
     protected
     def payment_params
         params.require(:payment).permit(:amount, :membership_id)
